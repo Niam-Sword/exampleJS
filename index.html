@@ -74,7 +74,27 @@
       
 <!--================================================================================================================================================================-->
       
+      <script>
+        function celebrate()
+        {
+          var age = document.getElementById("agebox").value;
+          for(var index = 0; index < age; index++)
+          {
+            var candleImg = document.createElement("img");
+            candleImg.src = "https://i.imgur.com/chi9aWC.png";
+            document.getElementById("candlesgohere").appendChild(candleImg);
+          }
+        }
+      </script>
+  
       <div id="page3" class="page">
+        <form>
+          <label for="agebox">Enter your age:</label><br>
+          <input type="number" id="agebox" value="0">
+          <button onclick="celebrate();">Click when done!</button>
+        </form>
+        
+        <div id="candlesgohere"></div>
         
         <footer id="navigation" class="w3-bottom">
           <center><p><a href="#page1">1</a>, <a href="#page2">2</a>, <a href="#page3">3</a></p></center>
