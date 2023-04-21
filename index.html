@@ -36,7 +36,36 @@
       
 <!--================================================================================================================================================================-->
       
+      <script>
+        var coldsymptomcounter = 0;
+        var allergysymptomcounter = 0;
+        
+        function incrementCold()
+        {
+          coldsymptomcounter++;
+          document.getElementById("coldsymptomdisplay").innerHTML = "Cold symptom count: " + coldsymptomcounter;
+        }
+        function incrementAllergies()
+        {
+          allergysymptomcounter++;
+          document.getElementById("allergysymptomdisplay").innerHTML = "Allergy symptom count: " + allergysymptomcounter;
+        }
+        function showResults()
+        {
+          if(coldsymptomcounter > allergysymptomcounter){ document.getElementById("coldorallergies").innerHTML = "You have a cold.";  }
+          else if(coldsymptomcounter < allergysymptomcounter){  document.getElementById("coldorallergies").innerHTML = "You have allergies."; }
+          else{ document.getElementById("coldorallergies").innerHTML = "It could be either a cold or allergies."; }
+        }
+      </script>
+  
       <div id="page2" class="page">
+        <p id="coldsymptomdisplay">Cold symptom count goes here.</p>
+        <p id="allergysymptomdisplay">Allergy symptom count goes here.</p>
+        <p id="coldorallergies">Results go here.</p>
+        
+        <button onclick="incrementCold();">+1 cold symptom</button>
+        <button onclick="incrementAllergies();">+1 allergy symptom</button>
+        <button onclick="showResults();">Show Results</button>
         
         <footer id="navigation" class="w3-bottom">
           <center><p><a href="#page1">1</a>, <a href="#page2">2</a>, <a href="#page3">3</a></p></center>
